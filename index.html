@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Weather Dashboard Js</title>
+
+</head>
+<body>
+    <header>
+        <nav class="h-20 bg-gradient-to-r from-purple-600 to-blue-600">
+            <h1 class="text-5xl text-right text-white m-0 pr-96 pt-2">Weather Dashboard</h1>
+        </nav>
+    </header>
+
+    <main class="flex" >
+        <section id="search" class="h-screen w-2/5 bg-red-700">
+            <h2 class="h-16 text-5xl ml-4 w-4/5">Search for a City:</h2>
+            <input class="border-2 ml-4 rounded-lg w-4/5 h-12" type="text" name="searcg" id="" value="Search">
+            <button class=" text-2xl text-justify border-2 ml-4 mt-5 w-4/5 flex ">Search</button>
+        </section>
+
+        <section id="Weather" class="w-screen bg-green-700">
+            <div id="cityWeather" class="border-2 h-2/6 w-3/5">
+                <header class="text-5xl h-20">Atlanta (9/13/22)</header>
+                <ul>
+                    <li class="h-10">1</li>
+                    <li class="h-10">2</li>
+                    <li class="h-10">3</li>
+                </ul>
+            </div>
+            <div id="forecast">
+                <header class="text-5xl mt-5 h-20">5 Day Forecast:</header>
+                <ul class="flex">
+                    <li class="m-3 h-56 w-56 bg-yellow-700">1</li>
+                    <li class="m-3 h-56 w-56 bg-yellow-700">2</li>
+                    <li class="m-3 h-56 w-56 bg-yellow-700">3</li>
+                    <li class="m-3 h-56 w-56 bg-yellow-700">4</li>
+                    <li class="m-3 h-56 w-56 bg-yellow-700  ">5</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
