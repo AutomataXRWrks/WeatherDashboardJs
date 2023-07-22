@@ -15,29 +15,59 @@
     </header>
 
     <main class="flex" >
-        <section id="search" class="h-screen w-2/5 bg-red-700">
-            <h2 class="h-16 text-5xl ml-4 w-4/5">Search for a City:</h2>
-            <input class="border-2 ml-4 rounded-lg w-4/5 h-12" type="text" name="searcg" id="" value="Search">
-            <button class=" text-2xl text-justify border-2 ml-4 mt-5 w-4/5 flex ">Search</button>
+        <section id="search" class="h-screen w-2/5">
+            <h2 class="h-16 text-4xl ml-4 w-4/5 mt-2 font-bold">Search for a City:</h2>
+            <input class="border-2 ml-4 rounded-lg w-4/5 h-12" type="text" name="search" id="inputCity" value=" ">
+            <button class=" text-2xl  text-justify border-2 ml-4 mt-5 w-4/5 flex bg-blue-400 ">Search</button>
         </section>
 
-        <section id="Weather" class="w-screen bg-green-700">
+        <section id="Cweather" class="w-screen hidden">
             <div id="cityWeather" class="border-2 h-2/6 w-3/5 m-3">
-                <header class="text-5xl  h-20">Atlanta (9/13/22)</header>
+                <header class="text-5xl  h-20 currentCity">Current City Weather and Current Day</header>
                 <ul>
-                    <li class="h-10">1</li>
-                    <li class="h-10">2</li>
-                    <li class="h-10">3</li>
+                    <li class="h-10 temp">Temp:</li>
+                    <li class="h-10 wind">Wind:</li>
+                    <li class="h-10 hum">Humidity:</li>
                 </ul>
             </div>
-            <div id="forecast">
+            <div id="forecast" class="hidden">
                 <header class="text-5xl m-3 mt-5 h-20">5 Day Forecast:</header>
                 <ul class="flex">
-                    <li class="m-3 h-56 w-56 bg-yellow-700">1</li>
-                    <li class="m-3 h-56 w-56 bg-yellow-700">2</li>
-                    <li class="m-3 h-56 w-56 bg-yellow-700">3</li>
-                    <li class="m-3 h-56 w-56 bg-yellow-700">4</li>
-                    <li class="m-3 h-56 w-56 bg-yellow-700 ">5</li>
+                    <li class="m-3 h-56 w-56 bg-gray-700 forecastOne">
+                        <div>1rst Day Forecast</div>
+                        <div>Icon</div>
+                        <div>Temp:</div>
+                        <div>Wind:</div>
+                        <div>Humidity</div>
+                    </li>
+                    <li class="m-3 h-56 w-56 bg-gray-700 forecasTwo">
+                        <div>1rst Day Forecast</div>
+                        <div>Icon</div>
+                        <div>Temp:</div>
+                        <div>Wind:</div>
+                        <div>Humidity</div>
+                    </li>
+                    <li class="m-3 h-56 w-56 bg-gray-700 forecastThree">
+                        <div>1rst Day Forecast</div>
+                        <div>Icon</div>
+                        <div>Temp:</div>
+                        <div>Wind:</div>
+                        <div>Humidity</div>
+                    </li>
+                    <li class="m-3 h-56 w-56 bg-gray-700 forecastFour">
+                        <div>1rst Day Forecast</div>
+                        <div>Icon</div>
+                        <div>Temp:</div>
+                        <div>Wind:</div>
+                        <div>Humidity</div>
+                    </li>
+                    <li class="m-3 h-56 w-56 bg-gray-700 forecastFive">
+                        <div>1rst Day Forecast</div>
+                        <div>Icon</div>
+                        <div>Temp:</div>
+                        <div>Wind:</div>
+                        <div>Humidity</div>
+                    </li>
                 </ul>
             </div>
 
