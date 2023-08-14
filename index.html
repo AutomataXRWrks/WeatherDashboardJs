@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather Dashboard Js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -21,52 +24,56 @@
             <button class=" text-2xl  text-justify border-2 ml-4 mt-5 w-4/5 flex bg-blue-400 ">Search</button>
         </section>
 
-        <section id="Cweather" class="w-screen hidden">
+        <section id="Cweather" class="w-screen">
             <div id="cityWeather" class="border-2 h-2/6 w-3/5 m-3">
-                <header class="text-5xl  h-20 currentCity">Current City Weather and Current Day</header>
+                <div class="flex">
+                    <header class="text-4xl  h-20 pt-1 mx-6 currentCity ">Current City Weather and Current Day</header>
+                    <img class="iconMain"></img>
+                </div>
+
                 <ul>
-                    <li class="h-10 temp">Temp:</li>
-                    <li class="h-10 wind">Wind:</li>
-                    <li class="h-10 hum">Humidity:</li>
+                    <li class="h-10 temp mx-6">Temp:</li>
+                    <li class="h-10 wind mx-6">Wind:</li>
+                    <li class="h-10 hum mx-6">Humidity:</li>
                 </ul>
             </div>
-            <div id="forecast" class="hidden">
+            <div id="forecast">
                 <header class="text-5xl m-3 mt-5 h-20">5 Day Forecast:</header>
-                <ul class="flex">
+                <ul class="flex text-white">
                     <li class="m-3 h-56 w-56 bg-gray-700 forecastOne">
-                        <div>1rst Day Forecast</div>
-                        <div>Icon</div>
-                        <div>Temp:</div>
-                        <div>Wind:</div>
-                        <div>Humidity</div>
+                        <div class="mx-2 text-2xl">1rst Day Forecast</div>
+                        <img class="mx-2"></img>
+                        <div class="mx-2">Temp:</div>
+                        <div class="mx-2">Wind:</div>
+                        <div class="mx-2">Humidity</div>
                     </li>
                     <li class="m-3 h-56 w-56 bg-gray-700 forecasTwo">
-                        <div>1rst Day Forecast</div>
-                        <div>Icon</div>
-                        <div>Temp:</div>
-                        <div>Wind:</div>
-                        <div>Humidity</div>
+                        <div class="mx-2 text-2xl">2nd Day Forecast</div>
+                        <img class="mx-2"></img>
+                        <div class="mx-2">Temp:</div>
+                        <div class="mx-2">Wind:</div>
+                        <div class="mx-2">Humidity</div>
                     </li>
                     <li class="m-3 h-56 w-56 bg-gray-700 forecastThree">
-                        <div>1rst Day Forecast</div>
-                        <div>Icon</div>
-                        <div>Temp:</div>
-                        <div>Wind:</div>
-                        <div>Humidity</div>
+                        <div class="mx-2 text-2xl">3rd Day Forecast</div>
+                        <img class="mx-2"></img>
+                        <div class="mx-2">Temp:</div>
+                        <div class="mx-2">Wind:</div>
+                        <div class="mx-2">Humidity</div>
                     </li>
                     <li class="m-3 h-56 w-56 bg-gray-700 forecastFour">
-                        <div>1rst Day Forecast</div>
-                        <div>Icon</div>
-                        <div>Temp:</div>
-                        <div>Wind:</div>
-                        <div>Humidity</div>
+                        <div class="mx-2 text-2xl">4th Day Forecast</div>
+                        <img class="mx-2"></img>
+                        <div class="mx-2">Temp:</div>
+                        <div class="mx-2">Wind:</div>
+                        <div class="mx-2">Humidity</div>
                     </li>
                     <li class="m-3 h-56 w-56 bg-gray-700 forecastFive">
-                        <div>1rst Day Forecast</div>
-                        <div>Icon</div>
-                        <div>Temp:</div>
-                        <div>Wind:</div>
-                        <div>Humidity</div>
+                        <div class="mx-2 text-2xl">5th Day Forecast</div>
+                        <img class="mx-2"></img>
+                        <div class="mx-2">Temp:</div>
+                        <div class="mx-2">Wind:</div>
+                        <div class="mx-2">Humidity</div>
                     </li>
                 </ul>
             </div>

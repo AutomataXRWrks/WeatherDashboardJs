@@ -14,6 +14,8 @@ var Ffour = document.querySelector(".forecastFour");
 var Ffive = document.querySelector(".forecastFive");
 var currentCity = document.querySelector("#Cweather");
 var forecast = document.querySelector("#forecast");
+var iconMain = document.querySelector(".iconMain");
+
 
 function makeUrl(){
   var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid='+ apikey +'&units=imperial';
@@ -30,8 +32,7 @@ function getApi() {
         return response.json();
       })
       .then(function (data) {
-        //console.log(data)
-        //console.log(data.list[0].main.temp);
+        console.log(data)
         setData(data);
         currentCity.setAttribute("class", "inline");
         forecast.setAttribute("class", "inline");
@@ -39,35 +40,59 @@ function getApi() {
   }
 
 function setData(data){
-
-cityT.textContent = data.city.name + '  (' + data.list[0].dt_txt+')';
+var date = data.city.name + '  (' + data.list[0].dt_txt+')';
+var datesp = date.split(" ");
+cityT.textContent = data.city.name + "  (" +datesp[2].substr(1,10) + ")";
+iconMain.setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[0].weather[0].icon+"@2x.png");
+Fone.children[1].setAttribute("class", "mx-6");
+iconMain.setAttribute("class", "w-12 h-12");
 temp.textContent = 'Temp: ' + data.list[0].main.temp + 'F';
 wind.textContent = 'Wind: '+ data.list[0].wind.gust + 'MPH'; 
 hum.textContent = 'Humidity: '+ data.list[0].main.humidity + '%';
 
-Fone.children[0].textContent = data.list[6].dt_txt;
+var dateOne = data.city.name + '  (' + data.list[6].dt_txt+')';
+var dateOnesp = dateOne.split(" ");
+Fone.children[0].textContent = "  (" +dateOnesp[2].substr(1,10) + ")";
+Fone.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[6].weather[0].icon+"@2x.png");
+Fone.children[1].setAttribute("class", "w-12 h-12");
 Fone.children[2].textContent = data.list[6].main.temp + 'F';
 Fone.children[3].textContent = data.list[6].wind.gust + 'MPH'
 Fone.children[4].textContent = data.list[6].main.humidity + '%';
 
-
-Ftwo.children[0].textContent = data.list[14].dt_txt;
+var dateTwo = data.city.name + '  (' + data.list[14].dt_txt+')';
+var dateTwosp = dateTwo.split(" ");
+Ftwo.children[0].textContent = "  (" +dateTwosp[2].substr(1,10) + ")";
+Ftwo.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[14].weather[0].icon+"@2x.png");
+Ftwo.children[1].setAttribute("class", "w-12 h-12");
 Ftwo.children[2].textContent = data.list[14].main.temp + 'F';
 Ftwo.children[3].textContent = data.list[14].wind.gust + 'MPH'
 Ftwo.children[4].textContent = data.list[14].main.humidity + '%';
 
-Fthree.children[0].textContent = data.list[22].dt_txt;
+var dateThree = data.city.name + '  (' + data.list[22].dt_txt+')';
+var dateThreesp = dateThree.split(" ");
+Fthree.children[0].textContent = "  (" +dateThreesp[2].substr(1,10) + ")";
+Fthree.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[22].weather[0].icon+"@2x.png");
+Fthree.children[1].setAttribute("class", "w-12 h-12");
 Fthree.children[2].textContent = data.list[22].main.temp + 'F';
 Fthree.children[3].textContent = data.list[22].wind.gust + 'MPH'
 Fthree.children[4].textContent = data.list[22].main.humidity + '%';
 
 
-Ffour.children[0].textContent = data.list[30].dt_txt;
+var dateFour = data.city.name + '  (' + data.list[30].dt_txt+')';
+var dateFoursp = dateFour.split(" ");
+Ffour.children[0].textContent =  "  (" +dateFoursp[2].substr(1,10) + ")";
+Ffour.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[22].weather[0].icon+"@2x.png");
+Ffour.children[1].setAttribute("class", "w-12 h-12");
 Ffour.children[2].textContent = data.list[30].main.temp + 'F';
 Ffour.children[3].textContent = data.list[30].wind.gust + 'MPH'
 Ffour.children[4].textContent = data.list[30].main.humidity + '%';
 
-Ffive.children[0].textContent = data.list[38].dt_txt;
+
+var dateFive = data.city.name + '  (' + data.list[38].dt_txt+')';
+var dateFivesp = dateFive.split(" ");
+Ffive.children[0].textContent =  "  (" +dateFivesp[2].substr(1,10) + ")";
+Ffive.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[22].weather[0].icon+"@2x.png");
+Ffive.children[1].setAttribute("class", "w-12 h-12");
 Ffive.children[2].textContent = data.list[38].main.temp + 'F';
 Ffive.children[3].textContent = data.list[38].wind.gust + 'MPH'
 Ffive.children[4].textContent = data.list[38].main.humidity + '%';
