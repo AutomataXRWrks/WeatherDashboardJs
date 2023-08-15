@@ -15,6 +15,7 @@ var Ffive = document.querySelector(".forecastFive");
 var currentCity = document.querySelector("#Cweather");
 var forecast = document.querySelector("#forecast");
 var iconMain = document.querySelector(".iconMain");
+var history = document.querySelector(".history")
 
 
 function makeUrl(){
@@ -34,10 +35,22 @@ function getApi() {
       .then(function (data) {
         console.log(data)
         setData(data);
+        saveHistory();
         currentCity.setAttribute("class", "inline");
         forecast.setAttribute("class", "inline");
       });
   }
+
+function saveHistory(){
+cities.push(input.value);
+localStorage.setItem("history", cities)
+}
+
+function createButtons(){
+  if(cities<1){
+
+  }
+}
 
 function setData(data){
 var date = data.city.name + '  (' + data.list[0].dt_txt+')';
@@ -81,7 +94,7 @@ Fthree.children[4].textContent = data.list[22].main.humidity + '%';
 var dateFour = data.city.name + '  (' + data.list[30].dt_txt+')';
 var dateFoursp = dateFour.split(" ");
 Ffour.children[0].textContent =  "  (" +dateFoursp[2].substr(1,10) + ")";
-Ffour.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[22].weather[0].icon+"@2x.png");
+Ffour.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[30].weather[0].icon+"@2x.png");
 Ffour.children[1].setAttribute("class", "w-12 h-12");
 Ffour.children[2].textContent = data.list[30].main.temp + 'F';
 Ffour.children[3].textContent = data.list[30].wind.gust + 'MPH'
@@ -91,7 +104,7 @@ Ffour.children[4].textContent = data.list[30].main.humidity + '%';
 var dateFive = data.city.name + '  (' + data.list[38].dt_txt+')';
 var dateFivesp = dateFive.split(" ");
 Ffive.children[0].textContent =  "  (" +dateFivesp[2].substr(1,10) + ")";
-Ffive.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[22].weather[0].icon+"@2x.png");
+Ffive.children[1].setAttribute("src", "https://openweathermap.org/img/wn/"+ data.list[38].weather[0].icon+"@2x.png");
 Ffive.children[1].setAttribute("class", "w-12 h-12");
 Ffive.children[2].textContent = data.list[38].main.temp + 'F';
 Ffive.children[3].textContent = data.list[38].wind.gust + 'MPH'
