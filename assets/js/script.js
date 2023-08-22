@@ -1,6 +1,8 @@
 var search = document.querySelector("button");
 var input = document.querySelector("input");
-var cities = ['Atlanta', "Denver", 'Seatle', 'San Francisco', 'Orlando', 'New York', 'Chicago', 'Austin'];
+var cities = {
+  history: []
+};
 var apikey = '82f7564608e33dc69c2bf305df503fc7';
 var requestUrl = "";
 var cityT = document.querySelector(".currentCity");
@@ -15,11 +17,17 @@ var Ffive = document.querySelector(".forecastFive");
 var currentCity = document.querySelector("#Cweather");
 var forecast = document.querySelector("#forecast");
 var iconMain = document.querySelector(".iconMain");
-var history = document.querySelector(".history")
+var searchSection = document.querySelector("#search");
+
 
 
 function makeUrl(){
   var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid='+ apikey +'&units=imperial';
+  return requestUrl
+} 
+
+function makeUrlhistory(city){
+  var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid='+ apikey +'&units=imperial';
   return requestUrl
 } 
 
@@ -29,27 +37,64 @@ search.addEventListener("click",getApi);
 function getApi() {
     fetch(makeUrl())
       .then(function (response) {
-        //console.log(response);
         return response.json();
       })
       .then(function (data) {
-        console.log(data)
         setData(data);
         saveHistory();
+        displayLocalData();
+
         currentCity.setAttribute("class", "inline");
         forecast.setAttribute("class", "inline");
       });
   }
 
-function saveHistory(){
-cities.push(input.value);
-localStorage.setItem("history", cities)
+  function getLastCity(city){
+    fetch(makeUrlhistory(city))
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (city) {
+      setData(city);
+      saveHistory();+
+      displayLocalData();
+
+      currentCity.setAttribute("class", "inline");
+      forecast.setAttribute("class", "inline");
+    });   
+  }
+
+function displayLocalData(){
+  var data = JSON.parse(localStorage.getItem("history"));
+  var divHist = document.createElement("div");
+  divHist.setAttribute("style", "width:50%;  color:white; background: #666666; margin: 5rem; padding: 25px;");
+  var buttonHist = document.createElement("button");
+  divHist.appendChild(buttonHist);
+  searchSection.appendChild(divHist);
+  buttonHist.setAttribute("style", "background: red; width: 8rem; height:1rem; padding: 25px; margin-left: 55px;");
+  buttonHist.setAttribute("class", "historyBtnn");
+  buttonHist.addEventListener("click", function(event){
+    event.preventDefault();
+    getLastCity(event.target.textContent);
+  });
+
+
+  if(data != null){
+    for (i = 0; i < data.history.length; i++){
+      buttonHist.textContent = data.history[i];
+    }
+  }
 }
 
-function createButtons(){
-  if(cities<1){
 
-  }
+
+
+
+
+function saveHistory(){
+var storeData = cities.history.push(input.value);
+localStorage.setItem("history",JSON.stringify(cities));
+
 }
 
 function setData(data){
