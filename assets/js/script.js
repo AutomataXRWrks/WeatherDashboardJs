@@ -67,11 +67,11 @@ function getApi() {
 function displayLocalData(){
   var data = JSON.parse(localStorage.getItem("history"));
   var divHist = document.createElement("div");
-  divHist.setAttribute("style", "width:50%;  color:white; background: #666666; margin: 5rem; padding: 25px;");
+  divHist.setAttribute("style", "  color:white;  margin: 1rem; ");
   var buttonHist = document.createElement("button");
   divHist.appendChild(buttonHist);
   searchSection.appendChild(divHist);
-  buttonHist.setAttribute("style", "background: red; width: 8rem; height:1rem; padding: 25px; margin-left: 55px;");
+  buttonHist.setAttribute("style", "background: rgb(174,174,174);  border-radius:10px; width:84%; height:1rem;  padding: 25px; text-align: center;  ");
   buttonHist.setAttribute("class", "historyBtnn");
   buttonHist.addEventListener("click", function(event){
     event.preventDefault();
