@@ -56,7 +56,7 @@ function getApi() {
     })
     .then(function (city) {
       setData(city);
-      saveHistory();+
+      //saveHistory();
       displayLocalData();
 
       currentCity.setAttribute("class", "inline");
@@ -67,15 +67,19 @@ function getApi() {
 function displayLocalData(){
   var data = JSON.parse(localStorage.getItem("history"));
   var divHist = document.createElement("div");
-  divHist.setAttribute("style", "  color:white;  margin: 1rem; ");
+  var textHeaderHistory = document.createElement("header");
+  divHist.setAttribute("style", "  color:white; width:84%;  ");
+  textHeaderHistory.setAttribute("style", "margin-bottom: 10%");
   var buttonHist = document.createElement("button");
+  buttonHist.appendChild(textHeaderHistory);
   divHist.appendChild(buttonHist);
   searchSection.appendChild(divHist);
-  buttonHist.setAttribute("style", "background: rgb(174,174,174);  border-radius:10px; width:84%; height:1rem;  padding: 25px; text-align: center;  ");
-  buttonHist.setAttribute("class", "historyBtnn");
+  buttonHist.setAttribute("style", "background: rgb(174,174,174);  border-radius:10px; width:95%; padding:5px; margin-left:3%; margin:2%; color:black;  font-size: 100%;  ");
+  buttonHist.setAttribute("class", "historyBtnn;");
   buttonHist.addEventListener("click", function(event){
     event.preventDefault();
     getLastCity(event.target.textContent);
+    saveHistoryBtnn(event.target.textContent);
   });
 
 
@@ -88,14 +92,18 @@ function displayLocalData(){
 
 
 
-
-
-
 function saveHistory(){
 var storeData = cities.history.push(input.value);
 localStorage.setItem("history",JSON.stringify(cities));
 
 }
+
+function saveHistoryBtnn(city){
+  var storeData = cities.history.push(city);
+  localStorage.setItem("history",JSON.stringify(cities));
+  
+  }
+
 
 function setData(data){
 var date = data.city.name + '  (' + data.list[0].dt_txt+')';

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather Dashboard Js</title>
-    <link rel="stylesheet" type="text/css" src="./assets/css/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -13,22 +13,22 @@
 </head>
 <body>
     <header>
-        <nav class="h-20 bg-gradient-to-r from-purple-600 to-blue-600">
+        <nav class="h-20 bg-gradient-to-r from-blue-600 to-purple-600">
             <h1 class="text-5xl text-right text-white m-0 pr-96 pt-2">Weather Dashboard</h1>
         </nav>
     </header>
 
     <main class="flex" >
-        <section id="search" class="h-screen w-2/5">
-            <h2 class="h-16 text-4xl ml-4 w-4/5 mt-2 font-bold">Search for a City:</h2>
-            <input class="border-2 ml-4 rounded-lg w-4/5 h-12" type="text" name="search" id="inputCity" value=" ">
-            <button id="searchbttn" class=" text-2xl  text-justify rounded-lg border-2 ml-4 mt-5 w-4/5 flex bg-blue-400">Search</button>
+        <section id="search" class="h-screen w-4/12">
+            <h2 class="h-16 text-4xl ml-4  mt-2 font-bold">Search for a City:</h2>
+            <input class="border-2 ml-4 rounded-lg w-4/5 h-12" type="text" name="search" id="inputCity" value="     ">
+            <button id="searchbttn" class=" text-2xl rounded-lg border-2 ml-4 mt-5 w-4/5 flex bg-blue-400"><header class="m-auto text-white">Search</header></button>
             <div class="borderSearch border-b-2 border-gray-200 pt-6 w-3/5 ml-20"></div>
 
         </section>
 
         <section id="Cweather" class="w-screen">
-            <div id="cityWeather" class="border-2 h-2/6 w-3/5 m-3">
+            <div id="cityWeather" class="border-2 h-2/6 w-12/12 m-3">
                 <div class="flex">
                     <header class="text-4xl  h-20 pt-1 mx-6 currentCity ">Current City Weather and Current Day</header>
                     <img class="iconMain"></img>
