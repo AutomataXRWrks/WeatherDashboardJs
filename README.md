@@ -1,42 +1,41 @@
 # WeatherDashboardJs
 
-# Challenge-2-Advanced-CSS
-# 📖 Web application from scratch for Challenge 2
+# Challenge-6-Server-Side APIs Challenge
+# 📖 Use the 5 Day Weather Forecast to retrieve weather data for cities.
 
-The web page for challenge 2 is given as the next images.
-
-# For desktop users
-
-![A webpage well design for desktop users with a nav bar, a page name and title. semantic lay ](./assets/images/web-portafolio-1.PNG)
-
-![A webpage well design for desktop users with a nav bar, a page name and title. semantic lay](./assets/images/web-portafolio-2.PNG)
+The web page for challenge 6 is given as the next images.
 
 
-![A webpage well design for desktop users with a nav bar, a page name and title. semantic lay](./assets/images/web-portafolio-3.PNG)
+
+![A webpage well design for etrieve weather data for cities ](./assets/images/Weather1.PNG)
+
+![A webpage well design for etrieve weather data for cities](./assets/images/Weather2.PNG)
 
 
-In this project is contained the web application from scratch for challenge 2 of module 2. Requested aspects for the challenge where made on the code such as:
-
-* resize the page or view the site on various screens and devices THEN I am presented with a responsive layout that adapts to my viewport
-
-* click on the images of the applications THEN I am taken to that deployed application
-
-* present with the developer's first application THEN that application's image should be larger in size than the others
-
-* click on the link to the section about their work THEN the UI scrolls to a section with titled images of the developer's applications
-
-*  click one of the links in the navigation THEN the UI scrolls to the corresponding section
-
-* present a developer's name, a recent photo or avatar, and links to sections about them, their work, and how to contact them
 
 
-* Prototyping reset.css
+
+In this project is contained the web application to retrieve weather data for cities, for challenge 6. Requested aspects for the challenge where made on the code such as:
+
+* WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+
+* WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the the wind speed
+
+* WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+
+* WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city
+
+
 
 
 # 🏆 The base code is deployed a this link 
 
-https://github.com/AutomataXRWrks/Challenge-2-Advanced-CSS
+https://github.com/AutomataXRWrks/WeatherDashboardJs
 
-## Go to Website: [Challenge-2-Advanced-CSS](https://automataxrwrks.github.io/Challenge-2-Advanced-CSS/)
+## Go to Website: [Challenge-6-Server-Side APIs Challenge](https://automataxrwrks.github.io/WeatherDashboardJs/)
 
 
