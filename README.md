@@ -7,9 +7,9 @@ The web page for challenge 6 is given as the next images.
 
 
 
-![A webpage well design for etrieve weather data for cities ](./assets/images/Weather1.PNG)
+![A webpage well design for etrieve weather data for cities ](./assets/images/Weather1.png)
 
-![A webpage well design for etrieve weather data for cities](./assets/images/Weather2.PNG)
+![A webpage well design for etrieve weather data for cities](./assets/images/Weather2.png)
 
 
 
